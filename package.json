@@ -17,6 +17,15 @@
   },
   "homepage": "https://github.com/yujilow1220/ctl-builder#readme",
   "dependencies": {
-    "input-event": "^1.2.0"
+    "argv": "0.0.2",
+    "daemon": "^1.1.0",
+    "input-event": "^1.2.0",
+    "keypress": "^0.2.1",
+    "linux-input-device": "^1.0.0",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2"
   }
 }
