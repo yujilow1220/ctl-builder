@@ -4,8 +4,16 @@ var milight = new Milight({
     broadcast: true
 });
 
+var mpd = require('mpd');
+var cmd = mpd.cmd;
+var client = mpd.connect({
+  port: 6600,
+  host: 'localhost',
+});
+
 var toggle = false;
 var brightness = 100;
+var music_toggle = false;
 
 module.exports.light_toggle = function(){
   if(toggle)milight.on();
@@ -32,4 +40,31 @@ module.exports.light_cold = function(){
 
 module.exports.light_warm = function(){
   console.log("warm");
+  console.log(cmd);
+}
+
+module.exports.music_toggle = function(){
+  var command = "play";
+  if(!music_toggle){
+    command = "pause";
+  }
+  client.sendCommand(cmd(command, []), function(err, msg) {
+    if (err) throw err;
+    console.log(msg);
+    music_toggle = !music_toggle;
+  });
+}
+
+module.exports.music_next = function(){
+  client.sendCommand(cmd("next", []), function(err, msg) {
+    if (err) throw err;
+    console.log(msg);
+  });
+}
+
+module.exports.music_prev = function(){
+  client.sendCommand(cmd("previous", []), function(err, msg) {
+    if (err) throw err;
+    console.log(msg);
+  });
 }
