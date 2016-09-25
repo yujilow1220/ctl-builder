@@ -10,7 +10,6 @@ var client = mpd.connect({
   port: 6600,
   host: 'localhost',
 });
-
 var toggle = false;
 var brightness = 100;
 var music_toggle = false;

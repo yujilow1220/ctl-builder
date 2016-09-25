@@ -39,11 +39,15 @@
       },
       {
         "key": "left",
-        "cmd": ""
+        "cmd": "music_prev"
       },
       {
         "key": "right",
-        "cmd": ""
+        "cmd": "music_next"
+      },
+      {
+        "key": "return",
+        "cmd": "music_toggle"
       }
     ]
   },
