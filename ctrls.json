@@ -1,1 +1,113 @@
-[{"zone":"a","events":[{"key":"b","cmd":""},{"key":"n","cmd":""},{"key":"m","cmd":""}]}, {"zone":"x","events":[{"key":"b","cmd":""},{"key":"n","cmd":""},{"key":"m","cmd":""}]}]
+[
+  {
+    "zone": "a",
+    "desc": "light main",
+    "events": [
+      {
+        "key": "up",
+        "cmd": "light_up"
+      },
+      {
+        "key": "down",
+        "cmd": "light_down"
+      },
+      {
+        "key": "left",
+        "cmd": "light_warm"
+      },
+      {
+        "key": "right",
+        "cmd": "light_cold"
+      },
+      {
+        "key": "return",
+        "cmd": "light_toggle"
+      }
+    ]
+  },
+  {
+    "zone": "d",
+    "desc": "music",
+    "events": [
+      {
+        "key": "up",
+        "cmd": ""
+      },
+      {
+        "key": "down",
+        "cmd": ""
+      },
+      {
+        "key": "left",
+        "cmd": ""
+      },
+      {
+        "key": "right",
+        "cmd": ""
+      }
+    ]
+  },
+  {
+    "zone": "g",
+    "events": [
+      {
+        "key": "up",
+        "cmd": ""
+      },
+      {
+        "key": "down",
+        "cmd": ""
+      },
+      {
+        "key": "left",
+        "cmd": ""
+      },
+      {
+        "key": "right",
+        "cmd": ""
+      }
+    ]
+  },
+  {
+    "zone": "j",
+    "events": [
+      {
+        "key": "up",
+        "cmd": ""
+      },
+      {
+        "key": "down",
+        "cmd": ""
+      },
+      {
+        "key": "left",
+        "cmd": ""
+      },
+      {
+        "key": "right",
+        "cmd": ""
+      }
+    ]
+  },
+  {
+    "zone": "m",
+    "events": [
+      {
+        "key": "up",
+        "cmd": ""
+      },
+      {
+        "key": "down",
+        "cmd": ""
+      },
+      {
+        "key": "left",
+        "cmd": ""
+      },
+      {
+        "key": "right",
+        "cmd": ""
+      }
+    ]
+  }
+]

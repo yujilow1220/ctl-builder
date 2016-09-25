@@ -2,6 +2,7 @@ var argv = require('argv').run();
 var keypress = require('keypress');
 var conf = require('./lib/conf');
 var ctrls = require('./ctrls.json');
+var Func = require('./func');
 var zone = "";
 // make `process.stdin` begin emitting "keypress" events
 keypress(process.stdin);
@@ -28,6 +29,7 @@ else{
 function validate(key){
   if (key && key.ctrl && key.name == 'c') {
     process.stdin.pause();
+    process.exit(0);
   }
 }
 
@@ -53,4 +55,5 @@ function setzone(key){
 
 function execute_cmd(cmd){
   console.log("execute this command: ", cmd);
+  Func[cmd]();
 }
