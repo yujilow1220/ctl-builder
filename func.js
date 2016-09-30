@@ -1,45 +1,46 @@
-var Milight = require("milight");
-var milight = new Milight({
-    host: "192.168.0.107",
-    broadcast: true
-});
+var Milight = require('node-milight-promise').MilightController;
+var commands = require('node-milight-promise').commands2;
+
+var light = new Milight({
+        ip: "192.168.0.200",
+        delayBetweenCommands: 75,
+        commandRepeat: 2
+    }),
+zone = 2;
+
 
 var mpd = require('mpd');
 var cmd = mpd.cmd;
 var client = mpd.connect({
   port: 6600,
-  host: 'localhost',
+  host: '192.168.0.136',
 });
 var toggle = false;
-var brightness = 100;
 var music_toggle = false;
 
 module.exports.light_toggle = function(){
-  if(toggle)milight.on();
-  else milight.off();
+  if(toggle)light.sendCommands(commands.white.on(zone));
+  else light.sendCommands();
   toggle = !toggle;
   console.log("isOn? = " + toggle);
 }
 
 module.exports.light_up = function(){
-  brightness += 10;
-  milight.brightness(brightness);
-  console.log("brightness = " + brightness);
+  light.sendCommands(commands.white.brightUp())
 }
 
 module.exports.light_down = function(){
-  brightness -= 10;
-  milight.brightness(brightness);
-  console.log("brightness = " + brightness);
+  light.sendCommands(commands.white.brightDown())
 }
 
 module.exports.light_cold = function(){
+  light.sendCommands(commands.white.cooler())
   console.log("cold");
 }
 
 module.exports.light_warm = function(){
+  light.sendCommands(commands.white.warmer())
   console.log("warm");
-  console.log(cmd);
 }
 
 module.exports.music_toggle = function(){
