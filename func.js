@@ -20,7 +20,7 @@ var music_toggle = false;
 
 module.exports.light_toggle = function(){
   if(toggle)light.sendCommands(commands.white.on(zone));
-  else light.sendCommands();
+  else light.sendCommands(commands.white.off(zone));
   toggle = !toggle;
   console.log("isOn? = " + toggle);
 }
