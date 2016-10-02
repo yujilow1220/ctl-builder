@@ -1,6 +1,6 @@
 [
   {
-    "zone": "a",
+    "zone": "1",
     "desc": "light main",
     "events": [
       {
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "zone": "d",
+    "zone": "2",
     "desc": "music",
     "events": [
       {
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "zone": "g",
+    "zone": "3",
     "events": [
       {
         "key": "up",
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "zone": "j",
+    "zone": "4",
     "events": [
       {
         "key": "up",
@@ -94,7 +94,7 @@
     ]
   },
   {
-    "zone": "m",
+    "zone": "5",
     "events": [
       {
         "key": "up",
