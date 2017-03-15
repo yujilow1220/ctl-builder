@@ -11,13 +11,20 @@ zone = 2;
 
 var mpd = require('mpd');
 var cmd = mpd.cmd;
-var client = mpd.connect({
-  port: 6600,
-  host: '192.168.0.136',
-});
+// var client = mpd.connect({
+//   port: 6600,
+//   host: '192.168.0.131',
+// });
 var toggle = false;
 var music_toggle = false;
 
+module.exports.on = function(){
+  light.sendCommands(commands.white.on(zone));
+}
+
+module.exports.off = function(){
+  light.sendCommands(commands.white.off(zone)); 
+}
 module.exports.light_toggle = function(){
   if(toggle)light.sendCommands(commands.white.on(zone));
   else light.sendCommands(commands.white.off(zone));
